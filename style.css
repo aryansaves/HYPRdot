@@ -1,0 +1,74 @@
+* {
+  font-family: SF Pro Text, Inter, NotoSans Nerd Font;
+  font-size: 11px;
+  padding: 0;
+  margin: 0;
+}
+
+#waybar {
+  background: transparent;
+  color: #b8b8b8;
+}
+
+/* Common block style */
+#workspaces,
+#custom-uptime,
+#cpu,
+#clock,
+#pulseaudio,
+#backlight,
+#battery,
+#custom-power,
+#tray {
+  background: #1a1a1a;
+  padding: 2px 6px;
+  margin: 2px 6px;
+  border-radius: 5px;
+  min-height: 18px;
+}
+
+/* Each tray icon */
+#tray > .item {
+  margin: 0 8px;
+  padding: 2px 4px;
+  opacity: 0.6;
+}
+
+#tray > .item:hover {
+  opacity: 0.9;
+}
+
+/* Hover */
+#tray > .item:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#battery:hover,
+#custom-power:hover {
+  background: #2a2a2a;
+}
+
+/* Workspaces */
+#workspaces button {
+  padding: 2px 6px;
+  color: #666;
+}
+
+#workspaces button.active {
+  color: #ddd;
+}
+
+/* Icons muted monochrome */
+#tray,
+#pulseaudio,
+#backlight,
+#battery,
+#custom-power {
+  color: #888;
+}
+
+/* Tooltips */
+tooltip {
+  background: #1a1a1a;
+  border-radius: 6px;
+  padding: 6px 10px;
+}

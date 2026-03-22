@@ -1,0 +1,79 @@
+{
+  "layer": "top",
+  "position": "top",
+  "exclusive": true,
+  "passthrough": false,
+  "margin-bottom": -10,
+  "spacing": 6,
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/power",
+    "custom/uptime",
+    "cpu"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "tray",
+    "pulseaudio",
+    "backlight",
+    "battery"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": ""
+    }
+  },
+
+  "clock": {
+    "timezone": "Asia/Kolkata",
+    "tooltip": false,
+    "format": "{:%H:%M  %a %d}"
+  },
+
+  "cpu": {
+    "interval": 2,
+    "format": " {usage:>2}%",
+    "tooltip": false
+  },
+
+  "custom/uptime": {
+    "exec": "uptime -p | sed 's/up //'",
+    "interval": 300,
+    "tooltip": false
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁",
+    "format-icons": ["", "", ""],
+    "on-click": "pavucontrol"
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃜", "󰃛", "󰃚"]
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾"]
+  },
+
+  "custom/power": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/power_status.sh",
+    "interval": 5,
+    "on-click": "pkexec tlp bat && pkexec nvidia-smi -pm 1 && pkexec nvidia-smi -lgc 210,420",
+    "on-click-right": "pkexec tlp ac && pkexec nvidia-smi -rgc"
+  }
+}
